@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<?php
+require 'header.php'; ?>
+
 <head>
     <meta charset="UTF-8">
     <title>My Account</title>
