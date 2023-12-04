@@ -38,10 +38,10 @@ require 'header.php'; ?>
         }
 
         .card-img-profile {
-            width: 100px; /* or any other size */
-            height: 100px; /* maintain aspect ratio */
-            border-radius: 50%; /* make it round */
-            margin: 20px auto; /* centering the image */
+            width: 100px;
+            height: 100px;
+            border-radius: 50%; 
+            margin: 20px auto; 
         }
     </style>
 </head>
@@ -52,9 +52,9 @@ require 'header.php'; ?>
 
 <div class="container mt-4">
     <div class="row">
-            <!-- Main Content Section Placeholder - assuming it takes up 8 columns out of 12 -->
+            <!-- My Shelf Content -->
             <div class="col-md-8">
-                <!-- Main content goes here -->  
+                <!-- My Shelf Content -->  
             </div>
 
             <!-- User Profile Section -->
@@ -136,4 +136,8 @@ $holdsBooks = getBooks($con, 'holds');
 </div>
 
 
+<?php
+require 'footer.php'; ?>
+
 </body>
+</html>
