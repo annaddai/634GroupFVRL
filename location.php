@@ -59,6 +59,13 @@ require 'header.php'; ?>
     .address {
     white-space: pre-line;
     }
+
+    div.scroll {
+    height: 400px;
+    overflow-y: auto;
+}
+
+
     .img-fluid {
     object-fit: cover;
     }
@@ -66,6 +73,7 @@ require 'header.php'; ?>
     background: white;
     padding: 15px;
     margin-top: 20px;
+    margin-bottom: 20px;
     }
 
 </style>
@@ -74,25 +82,29 @@ require 'header.php'; ?>
 
 
   <div class="container mt-4">
-    <!-- Library Locations Section -->
+    
     <div class="row">
-      <!-- Location Details Column -->
+      
       <div class="col-md-6">
         
             <!-- Search Box -->
             <div class="search-box">
               <input type="text" class="search-bar" placeholder="Search Locations">
             </div>
-            <!-- Library Section -->
+
+<!-- scroll -->
+<div class="scroll">
+
+            <!-- Abbotsford Community Library -->
             <div class="library-section">
-              <!-- Library Title -->
+              
               <div class="library-title">Abbotsford Community Library</div>
-              <!-- Library Address -->
+              
               <div class="library-address">
                 33355 Bevan Avenue,<br>
                 Abbotsford, BC, V2S0E7
               </div>
-              <!-- Library Hours -->
+              
               <div class="library-hours mb-4">
                 <strong>Hours:</strong><br>
                 Monday: 9:00 am ~ 8:00 pm<br>
@@ -103,7 +115,7 @@ require 'header.php'; ?>
                 Saturday: 10:00 am ~ 5:00 pm<br>
                 Sunday: 10:00 am ~ 5:00 pm
               </div>
-              <!-- Library Facilities -->
+              
               <div class="library-facilities">
                 <strong>Facilities:</strong>
                 <ul>
@@ -119,8 +131,46 @@ require 'header.php'; ?>
                 </ul>
               </div>
             </div>
-      </div>
+            <hr class="solid">
+            <!-- Clearbrook Library -->
+            <div class="library-section">
+              
+              <div class="library-title">Clearbrook Library</div>
+              
+              <div class="library-address">
+              32320 George Ferguson Way,<br>
+              Abbotsford, BC V2T 6N4
+              </div>
+              
+              <div class="library-hours mb-4">
+                <strong>Hours:</strong><br>
+                Monday: 9:00 am ~ 8:00 pm<br>
+                Tuesday: 9:00 am ~ 8:00 pm<br>
+                Wednesday: 9:00 am ~ 8:00 pm<br>
+                Thursday: 9:00 am ~ 8:00 pm<br>
+                Friday: 10:00 am ~ 5:00 pm<br>
+                Saturday: 10:00 am ~ 5:00 pm<br>
+                Sunday: 10:00 am ~ 5:00 pm
+              </div>
+              
+              <div class="library-facilities">
+                <strong>Facilities:</strong>
+                <ul>
+                  <li>24 Hour Book Drop</li>
+                  <li>Accessible</li>
+                  <li>B&W Copying/Printing</li>
+                  <li>Colour Copying/Printing</li>
+                  <li>Outdoor Bike Rack</li>
+                  <li>Public Internet Stations</li>
+                  <li>Self Check-In Book Drop</li>
+                  <li>Self Check-Out</li>
+                  <li>WiFi</li>
+                </ul>
+              </div>
+            </div>
 
+      </div>
+  </div>
 
 
       <!-- Map Column -->
@@ -150,6 +200,8 @@ require 'header.php'; ?>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+<br>
+<br>
 
 <?php
 require 'footer.php'; ?>
