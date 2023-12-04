@@ -193,7 +193,7 @@
         </div>
     </div>
     <div class="additional-image">
-        <img src="weave.jpg" alt="Description of the additional image">
+        <img src="Assets/img/weave.jpg" alt="Description of the additional image">
     </div>
     <div class="text-after-additional-image">
         <div class="dinovember-text-after">
@@ -204,7 +204,7 @@
         </div>
     </div>
     <div class="second-additional-image">
-        <img src="dinovember.jpg" alt="Description of the second additional image">
+        <img src="Assets/img/dinovember.jpg" alt="Description of the second additional image">
     </div>
     <div class="time-text">
         Time: All day, Tuesday, October 03 to Friday, December 22
