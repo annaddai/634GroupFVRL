@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Static Footer Example</title>
-<link rel="stylesheet" href="assets/css/footer.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
 
-<body>
   <!-- Footer -->
   <footer class="footer">
     <div class="footer-content container">
@@ -60,7 +50,7 @@
     </div>
     <!-- Footer Bottom -->
     <div class="footer-bottom">
-      <img src="assets/img/FVRL.png" alt="FVRL Logo" width="25px" height="25px"> 
+      <img src="assets/img/FVRL.png" alt="FVRL Logo" width="25px" height="25px">
       <p>Fraser Valley Regional Library</p>
       <p>&copy; 2023 FVRL Webdesign</p>
     </div>
