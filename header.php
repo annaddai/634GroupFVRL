@@ -10,7 +10,12 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
 <style>
-    a:hover, a:active {color:white}
+    a.navtab1:hover, a.navtab1:active {color:#FFFFFF}
+    a.navtab2:hover, a.navtab2:active {color:#FFFFFF}
+    a.navtab3:hover, a.navtab3:active {color:#FFFFFF}
+    a.navtab4:hover, a.navtab4:active {color:#FFFFFF}
+    a.navtab5:hover, a.navtab5:active {color:#FFFFFF}
+    a.navtab6:hover, a.navtab6:active {color:#FFFFFF}
 </style>
 <body>
 
@@ -19,12 +24,12 @@
         <div class="header-container">
             <img src="assets/img/transparentbg.png" alt="Library Logo" class="logo">
             <nav class="navbar">
-                <a href="myaccount.php">MyFVRL</a>
-                <a href="location.php">Locations</a>
-                <a href="#booksmedia">Books & Media</a>
-                <a href="#services">Services</a>
-                <a href="#events">Events</a>
-                <a href="#help">Help</a>
+                <a class="navtab1" href="myaccount.php">MyFVRL</a>
+                <a class="navtab2" href="location.php">Locations</a>
+                <a class="navtab3" href="#booksmedia">Books & Media</a>
+                <a class="navtab4" href="#services">Services</a>
+                <a class="navtab5" href="#events">Events</a>
+                <a class="navtab6" href="#help">Help</a>
             </nav>
             <div class="search-container">
                 <input type="text" placeholder="Search...">

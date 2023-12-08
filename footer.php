@@ -3,6 +3,15 @@
   <footer class="footer">
     <div class="footer-content container">
       <!-- Footer columns -->
+      <style>
+        h4 {font-weight:bold}
+        a.fa-facebook {color:#FFFFFF} a.fa-facebook:hover {color:#000000}
+        a.fa-twitter {color:#FFFFFF} a.fa-twitter:hover {color:#000000}
+        a.fa-youtube {color:#FFFFFF} a.fa-youtube:hover {color:#000000}
+        a.fa-instagram {color:#FFFFFF} a.fa-instagram:hover {color:#000000}
+        a.fa-pinterest {color:#FFFFFF} a.fa-pinterest:hover {color:#000000}
+      </style>
+
       <div class="footer-col">
         <h4>About Library</h4>
         <ul>
@@ -40,7 +49,6 @@
         <a class="fa fa-youtube"></a>
         <a class="fa fa-instagram"></a>
         <a class="fa fa-pinterest"></a>
-
         </div>
         <!-- Donate Button -->
         <div class="footer-donate-button">
