@@ -9,55 +9,98 @@ require 'header.php'; ?>
     <title>My Account</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        .card {
-            margin-bottom: 20px;
-        }
-
-        .card-deck .card {
-            flex: 1 0 auto;
-        }
-
-        .card-img-top {
-            height: 150px;
-            object-fit: cover; 
-            width: 100%;
-            border-radius: 0; 
-        }
-
-        .card-body {
-            background-color: #f8f9fa;
-        }
-
-        .card-title {
-            color: #333;
-        }
-
-        .card-text {
-            color: #666;
-        }
-
-        .card-img-profile {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%; 
-            margin: 20px auto; 
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/myaccount.css">
 </head>
 
 
 <body>
+<!-- php connection -->
+<?php
 
+require 'database.php';
 
+?>
+
+<!-- My Shelf Section -->
 <div class="container mt-4">
     <div class="row">
-            <!-- My Shelf Content -->
-            <div class="col-md-8">
-                <!-- My Shelf Content -->  
-            </div>
+        <div class="col-md-8">
 
-            <!-- User Profile Section -->
+
+
+<!-- message (add&remove) -->
+<div class='message'>
+<?php
+session_start();
+if (isset($_SESSION['message'])) {
+    echo "<p>" . $_SESSION['message'] . "</p>";
+    unset($_SESSION['message']);
+}
+?>
+</div>
+
+<div class='card-shelf'>
+<h5 class='myshelf-title'>My Shelf</h5>
+
+<?php
+
+require 'database.php';
+
+try {
+    $stmt = $conn->prepare("SELECT * FROM available_books");
+    $stmt->execute();
+    $availableBooks = $stmt->fetchAll(PDO::FETCH_ASSOC);
+} catch(PDOException $e) {
+    echo "Error: " . $e->getMessage();
+}
+?>
+    <!-- add to shelf -->
+<form action="add_to_shelf.php" method="post">
+    <label for="book">Add a book to your shelf:</label>
+    <select name="book_id" id="book">
+        <?php foreach ($availableBooks as $book) { ?>
+            <option value="<?php echo $book['id']; ?>">
+                <?php echo htmlspecialchars($book['book_name']); ?>
+            </option>
+        <?php } ?>
+    </select>
+    <input type="submit" value="Add to Shelf">
+</form>
+
+<?php
+require 'database.php';
+
+try {
+    $shelfStmt = $conn->prepare("SELECT shelf.id as shelf_id, books.* FROM shelf JOIN available_books as books ON shelf.book_id = books.id");
+    $shelfStmt->execute();
+    $shelfBooks = $shelfStmt->fetchAll(PDO::FETCH_ASSOC);
+} catch(PDOException $e) {
+    echo "Error: " . $e->getMessage();
+}   
+
+echo "<div class='shelf-books'>";
+foreach ($shelfBooks as $book) {
+    echo "<div class='shelf-book-item'>";
+    echo "<img src='" . htmlspecialchars($book['book_cover']) . "' alt='Book Cover' class='shelf-book-cover'/>";
+    echo "<div class='shelf-book-title'>" . htmlspecialchars($book['book_name']) . "</div>";
+    echo "<div class='shelf-book-author'>by " . htmlspecialchars($book['author']) . "</div>";
+    // remove button
+    echo "<form action='remove_from_shelf.php' method='post'>";
+    echo "<input type='hidden' name='shelf_id' value='" . $book['shelf_id'] . "' />";
+    echo "<input type='submit' value='Remove from Shelf'>";
+    echo "</form>";
+    echo "</div>";
+}
+echo "</div>";
+?>
+</div>
+</div>
+
+
+
+
+
+<!-- User Profile Section -->
             <div class="col-md-4">
                 <div class="card">
                     <img src="https://web.litguide.ca/client/assets/media/svg/avatars/001-boy.svg" class="card-img-profile" alt="User Avatar" >
@@ -76,64 +119,70 @@ require 'header.php'; ?>
 
 
 
-<?php 
+<div class="book-shelf">
+    <?php
+    
+    foreach ($books as $book) {
+        echo "<div class='book'>";
+        echo "<h2>" . $book['title'] . "</h2>";
+        echo "<p>" . $book['author'] . "</p>";
 
-$con = mysqli_connect("localhost", "root", "Daiyq0623!", "myaccount", 8889);
 
-if (mysqli_connect_errno()) {
-    echo "Failed to connect to MySQL: " . mysqli_connect_error();
-    exit();
-}
+        echo "<form action='remove_from_shelf.php' method='post'>";
+        echo "<input type='hidden' name='shelf_id' value='" . $book['shelf_id'] . "' />";
+        echo "<button type='submit' class='btn btn-danger btn-sm'>Remove from Shelf</button>";
+        echo "</form>";
 
-function getBooks($con, $table) {
-    $result = mysqli_query($con, "SELECT * FROM $table");
-    if(!$result) {
-        echo "Error fetching books: " . mysqli_error($con);
-        return [];
+        echo "</div>";
     }
-    $books = mysqli_fetch_all($result, MYSQLI_ASSOC);
-    return $books;
-}
-        
-$checkedOutBooks = getBooks($con, 'checked_out');
-$holdsBooks = getBooks($con, 'holds');
-?>
-
-<div class="container mt-4">
-    <div class="row">
-        <!-- Checked Out Section -->
-        <div class="col-md-6">
-            <h3>Checked Out</h3>
-            <div class="card-deck">
-                <?php foreach ($checkedOutBooks as $book): ?>
-                    <div class="card">
-                        <img src="<?= htmlspecialchars($book['book_cover']) ?>" class="card-img-top" alt="<?= htmlspecialchars($book['book_name']) ?>">
-                        <div class="card-body">
-                            <h5 class="card-title"><?= htmlspecialchars($book['book_name']) ?></h5>
-                            <p class="card-text"><?= htmlspecialchars($book['author']) ?></p>
-                        </div>
-                    </div>
-                <?php endforeach; ?>
-            </div>
-        </div> 
-
-        <!-- On Holds Section -->
-        <div class="col-md-6">
-            <h3>On Holds</h3>
-            <div class="card-deck">
-                <?php foreach ($holdsBooks as $book): ?>
-                    <div class="card">
-                        <img src="<?= htmlspecialchars($book['book_cover']) ?>" class="card-img-top" alt="<?= htmlspecialchars($book['book_name']) ?>">
-                        <div class="card-body">
-                            <h5 class="card-title"><?= htmlspecialchars($book['book_name']) ?></h5>
-                            <p class="card-text"><?= htmlspecialchars($book['author']) ?></p>
-                        </div>
-                    </div>
-                <?php endforeach; ?>
-            </div>
-        </div>
-    </div>
+    ?>
 </div>
+</div>
+
+
+<!-- checked out and on holds -->
+
+
+
+<?php
+require 'database.php';
+
+try {
+    $stmtCheckedOut = $conn->prepare("SELECT * FROM checked_out");
+    $stmtCheckedOut->execute();
+    $checkedOutBooks = $stmtCheckedOut->fetchAll(PDO::FETCH_ASSOC);
+
+    $stmtHolds = $conn->prepare("SELECT * FROM holds");
+    $stmtHolds->execute();
+    $booksOnHold = $stmtHolds->fetchAll(PDO::FETCH_ASSOC);
+
+} catch(PDOException $e) {
+    die("Connection failed: " . $e->getMessage());
+}
+
+echo "<div class='checked-out-books'>";
+echo "<h2>Checked Out</h2>";
+foreach ($checkedOutBooks as $book) {
+    echo "<div class='book-item'>";
+    echo "<img src='" . htmlspecialchars($book['book_cover']) . "' alt='Book Cover' class='book-cover'/>";
+    echo "<div class='book-title'>" . htmlspecialchars($book['book_name']) . "</div>";
+    echo "<div class='book-author'>by " . htmlspecialchars($book['author']) . "</div>";
+    echo "</div>";
+}
+echo "</div>";
+
+echo "<div class='books-on-hold'>"; 
+echo "<h2>On Hold</h2>";
+foreach ($booksOnHold as $book) {
+    echo "<div class='book-item'>";
+    echo "<img src='" . htmlspecialchars($book['book_cover']) . "' alt='Book Cover' class='book-cover' />"; 
+    echo "<div class='book-title'>" . htmlspecialchars($book['book_name']) . "</div>";
+    echo "<div class='book-author'>by " . htmlspecialchars($book['author']) . "</div>";
+    echo "</div>";
+}
+echo "</div>";
+
+?>
 
 
 <?php
