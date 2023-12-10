@@ -165,6 +165,7 @@
             left: 840px; /* Adjust based on image width */
             font-size: 25px;
             color: black;
+
        
         }
     </style>
