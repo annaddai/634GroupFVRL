@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -164,12 +165,61 @@
             left: 840px; /* Adjust based on image width */
             font-size: 25px;
             color: black;
+
+       
         }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
 </head>
+
+<?php 
+
+$con = mysqli_connect("127.0.0.1", "root", "Zjsyn98700526..", "Event", 3306);
+
+if (mysqli_connect_errno()) {
+    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+    exit();
+}
+
+function getevents($con, $table) {
+    $result = mysqli_query($con, "SELECT * FROM $table");
+    if(!$result) {
+        echo "Error fetching books: " . mysqli_error($con);
+        return [];
+    }
+    $events = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    return $events;
+}
+        
+$events = getevents($con, 'events');
+
+
+?>
+
+
 <body>
-    <div class="event">Event</div>
+<div class="event">
+<details ontoggle="myFunction()">
+   <summary>Event</summary>
+    
+    <?php foreach ($events as $event): ?>
+                    <div class="scrollableList">
+                        
+                        <div class="card-body">
+                            <h5 class="card-title"><?= htmlspecialchars($event['event_name']) ?></h5>
+
+                            <p class="card-text"><?= htmlspecialchars($event['starttime']) ?></p>
+                            <p class="card-text"><?= htmlspecialchars($event['endtime']) ?></p>
+                            <p class="card-text"><?= htmlspecialchars($event['Dates']) ?></p>
+                        </div>
+                    </div>
+                <?php endforeach; ?></div>
+</details>
+<script>
+function myFunction() {
+  //alert("The ontoggle event occured");
+}
+</script>
     <div class="search-box">
         <input type="text" class="search-bar" placeholder="Search...">
         <div class="options">
@@ -182,7 +232,7 @@
         </div>
     </div>
     <div class="image-container">
-        <img src="calender.jpg" alt="Description of the image">
+        <img src="Assets/img/calender.jpg" alt="Description of the image">
     </div>
     <div class="text-container">
         <div class="community-text">
@@ -214,3 +264,4 @@
     </div>
 </body>
 </html>
+
