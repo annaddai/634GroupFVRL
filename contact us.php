@@ -127,6 +127,7 @@
         .text-box {
             width: 300px;
             margin-left: 200px; /* Additional spacing for large box */
+
         }
 
         .large-text-box {
@@ -155,7 +156,7 @@
             height: 39px;
             weight: 100px:
             left: 300px; /* Distance from left */
-            bottom: 300px; /* Distance from bottom */
+            bottom: 500px; /* Distance from bottom */
         }
         .submit-text {
             font-family: 'Inter', sans-serif;
@@ -213,7 +214,7 @@
                 <label><input type="radio" name="search-option"> Topic</label>
             </div>
         </div>
-        <div class="results">
+        <div class="container">
             <p class="result-line">All Results:</p>
             <p class="question">What information literacy resources are available for faculty members to use in their classes?</p>
             <p class="details">Last Updated Oct 21 2019, 02:45pm | Topics: For Faculty, Instruction, Learning Resources, Information Literacy</p>

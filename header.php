@@ -28,7 +28,7 @@
                 <a class="navtab2" href="location.php">Locations</a>
                 <a class="navtab3" href="books_media.php">Books & Media</a>
                 <a class="navtab4" href="services.php">Services</a>
-                <a class="navtab5" href="#events">Events</a>
+                <a class="navtab5" href="Event.php">Events</a>
                 <a class="navtab6" href="#help">Help</a>
             </nav>
             <div class="search-container">
