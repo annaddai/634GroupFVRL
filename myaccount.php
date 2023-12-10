@@ -77,7 +77,7 @@ try {
 } catch(PDOException $e) {
     echo "Error: " . $e->getMessage();
 }   
-
+// display books
 echo "<div class='shelf-books'>";
 foreach ($shelfBooks as $book) {
     echo "<div class='shelf-book-item'>";
@@ -120,6 +120,7 @@ echo "</div>";
 
 
 <div class="book-shelf">
+<div class="grid-container">
     <?php
     
     foreach ($books as $book) {
@@ -160,29 +161,37 @@ try {
     die("Connection failed: " . $e->getMessage());
 }
 
-echo "<div class='checked-out-books'>";
-echo "<h2>Checked Out</h2>";
-foreach ($checkedOutBooks as $book) {
-    echo "<div class='book-item'>";
-    echo "<img src='" . htmlspecialchars($book['book_cover']) . "' alt='Book Cover' class='book-cover'/>";
-    echo "<div class='book-title'>" . htmlspecialchars($book['book_name']) . "</div>";
-    echo "<div class='book-author'>by " . htmlspecialchars($book['author']) . "</div>";
-    echo "</div>";
-}
-echo "</div>";
-
-echo "<div class='books-on-hold'>"; 
-echo "<h2>On Hold</h2>";
-foreach ($booksOnHold as $book) {
-    echo "<div class='book-item'>";
-    echo "<img src='" . htmlspecialchars($book['book_cover']) . "' alt='Book Cover' class='book-cover' />"; 
-    echo "<div class='book-title'>" . htmlspecialchars($book['book_name']) . "</div>";
-    echo "<div class='book-author'>by " . htmlspecialchars($book['author']) . "</div>";
-    echo "</div>";
-}
-echo "</div>";
-
 ?>
+
+<div class='checked-out-books'>
+    <h2>Checked Out</h2>
+    <div class='book-container'>
+        <?php
+        foreach ($checkedOutBooks as $book) {
+            echo "<div class='book-item'>";
+            echo "<img src='" . htmlspecialchars($book['book_cover']) . "' alt='Book Cover' class='book-cover'/>";
+            echo "<div class='book-title'>" . htmlspecialchars($book['book_name']) . "</div>";
+            echo "<div class='book-author'>by " . htmlspecialchars($book['author']) . "</div>";
+            echo "</div>";
+        }
+        ?>
+    </div>
+</div>
+
+<div class='books-on-hold'>
+    <h2>On Hold</h2>
+    <div class='book-container'>
+        <?php
+        foreach ($booksOnHold as $book) {
+            echo "<div class='book-item'>";
+            echo "<img src='" . htmlspecialchars($book['book_cover']) . "' alt='Book Cover' class='book-cover' />";
+            echo "<div class='book-title'>" . htmlspecialchars($book['book_name']) . "</div>";
+            echo "<div class='book-author'>by " . htmlspecialchars($book['author']) . "</div>";
+            echo "</div>";
+        }
+        ?>
+    </div>
+</div>
 
 
 <?php
