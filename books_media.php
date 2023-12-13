@@ -45,7 +45,7 @@
               aria-controls="home-tab-pane"
               aria-selected="true"
             >
-              Home
+              Books
             </button>
           </li>
           <li class="nav-item" role="presentation">
@@ -59,7 +59,7 @@
               aria-controls="profile-tab-pane"
               aria-selected="false"
             >
-              Profile
+              Ebooks
             </button>
           </li>
           <li class="nav-item" role="presentation">
@@ -73,22 +73,7 @@
               aria-controls="contact-tab-pane"
               aria-selected="false"
             >
-              Contact
-            </button>
-          </li>
-          <li class="nav-item" role="presentation">
-            <button
-              class="nav-link"
-              id="disabled-tab"
-              data-bs-toggle="tab"
-              data-bs-target="#disabled-tab-pane"
-              type="button"
-              role="tab"
-              aria-controls="disabled-tab-pane"
-              aria-selected="false"
-              disabled
-            >
-              Disabled
+              Audiobooks
             </button>
           </li>
         </ul>
