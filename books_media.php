@@ -23,6 +23,12 @@
       .tab-content {
         margin-left: 25px;
       }
+
+      img {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin-right: 40px;
+      }
     </style>
   </head>
 
@@ -37,7 +43,7 @@
           <li class="nav-item" role="presentation">
             <button
               class="nav-link active"
-              id="home-tab"
+              id="Books-tab"
               data-bs-toggle="tab"
               data-bs-target="#home-tab-pane"
               type="button"
@@ -51,7 +57,7 @@
           <li class="nav-item" role="presentation">
             <button
               class="nav-link"
-              id="profile-tab"
+              id="Ebooks-tab"
               data-bs-toggle="tab"
               data-bs-target="#profile-tab-pane"
               type="button"
@@ -65,7 +71,7 @@
           <li class="nav-item" role="presentation">
             <button
               class="nav-link"
-              id="contact-tab"
+              id="Audiobooks-tab"
               data-bs-toggle="tab"
               data-bs-target="#contact-tab-pane"
               type="button"
@@ -86,7 +92,9 @@
           aria-labelledby="home-tab"
           tabindex="0"
         >
-          ...
+          <img src="https://www.syndetics.com/index.aspx?isbn=9781324065401&issn=/LC.JPG&client=sepup&type=xw12" alt="Dayswork, 2023">
+          <img src="https://www.syndetics.com/index.aspx?isbn=9781982153083&issn=/LC.JPG&client=sepup&type=xw12&oclc=1335121846" alt="Dayswork, 2023">
+          <img src="https://www.syndetics.com/index.aspx?isbn=9780062885548&issn=/LC.JPG&client=sepup&type=xw12&oclc=1373777322" alt="Dayswork, 2023">
         </div>
         <div
           class="tab-pane fade"
@@ -95,7 +103,9 @@
           aria-labelledby="profile-tab"
           tabindex="0"
         >
-          ...
+          <img src="https://www.syndetics.com/index.aspx?isbn=9781324065401&issn=/LC.JPG&client=sepup&type=xw12" alt="Dayswork, 2023">
+          <img src="https://www.syndetics.com/index.aspx?isbn=9781982153083&issn=/LC.JPG&client=sepup&type=xw12&oclc=1335121846" alt="Dayswork, 2023">
+          <img src="https://www.syndetics.com/index.aspx?isbn=9780062885548&issn=/LC.JPG&client=sepup&type=xw12&oclc=1373777322" alt="Dayswork, 2023">
         </div>
         <div
           class="tab-pane fade"
@@ -104,7 +114,10 @@
           aria-labelledby="contact-tab"
           tabindex="0"
         >
-          ...
+          <img src="https://www.syndetics.com/index.aspx?isbn=9781324065401&issn=/LC.JPG&client=sepup&type=xw12" alt="Dayswork, 2023">
+          <img src="https://www.syndetics.com/index.aspx?isbn=9781982153083&issn=/LC.JPG&client=sepup&type=xw12&oclc=1335121846" alt="Dayswork, 2023">
+          <img src="https://www.syndetics.com/index.aspx?isbn=9780062885548&issn=/LC.JPG&client=sepup&type=xw12&oclc=1373777322" alt="Dayswork, 2023">
+
         </div>
         <div
           class="tab-pane fade"
