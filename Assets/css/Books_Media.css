@@ -1,0 +1,92 @@
+body {
+    color: #f8f9fa;
+  }
+
+  .section1 {
+    padding: 30px;
+    margin-left: 10px;
+  }
+
+  .section2 {
+    margin-bottom: 600px;
+    margin-left: 60px;
+    margin-top: -225px;
+    margin-right: 50px;
+  }
+
+  .spacer {
+    height: 2000px;
+  }
+
+  .SectionTabs {
+    margin-top: 25px;
+  }
+
+  .SectionTabs,
+  .tab-content {
+    margin-left: 25px;
+  }
+
+  img {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 40px;
+  }
+
+  .Title1 {
+    position: relative;
+    left: 5.5rem;
+    font-weight: bold;
+  }
+
+  .Title2 {
+    position: relative;
+    left: 25.5rem;
+    top: -2.5rem;
+    font-weight: bold;
+  }
+
+  .Title3 {
+    position: relative;
+    left: 44rem;
+    top: -5rem;
+    font-weight: bold;
+  }
+
+  .Title4 {
+    position: relative;
+    left: 63.75rem;
+    top: -7.5rem;
+    font-weight: bold;
+  }
+
+  .Author1 {
+    position: relative;
+    left: 4.25rem;
+    top: -8rem;
+  }
+
+  .Author2 {
+    position: relative;
+    left: 25.15rem;
+    top: -10.5rem;
+  }
+
+  .Author3 {
+    position: relative;
+    left: 44.25rem;
+    top: -13rem;
+  }
+
+  .Author4 {
+    position: relative;
+    left: 62.5rem;
+    top: -15.5rem;
+  }
+
+  .carousel-item {
+    height: 500px;
+    width: 10px;
+    background: #777;
+    position: relative;
+  }
