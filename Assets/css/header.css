@@ -9,6 +9,7 @@ body {
     align-items: center;
     background-color: #65cdc4; /* Adjust the color to match your design */
     padding: 1px 20px;
+    height: 130px;
 }
 
 .logo {
