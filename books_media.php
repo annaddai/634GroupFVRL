@@ -14,98 +14,9 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap"
       rel="stylesheet"
     />
-    <title>Fraser Valley Regional Library Books and Media</title>
-    <style>
-      body {
-        height: fit-content;
-        color: #f8f9fa;
-      }
-
-      .section1 {
-        padding: 30px;
-        margin-left: 10px;
-      }
-
-      .section2 {
-        position: relative;
-        top: -12rem;
-        left: 0.75rem;
-        height: fit-content;
-      }
-
-      .SectionTabs {
-        margin-top: 25px;
-      }
-
-      .SectionTabs,
-      .tab-content {
-        margin-left: 25px;
-      }
-
-      img {
-        margin-top: 20px;
-        margin-bottom: 20px;
-        margin-right: 40px;
-      }
-
-      .Title1 {
-        position: relative;
-        left: 5.5rem;
-        font-weight: bold;
-      }
-
-      .Title2 {
-        position: relative;
-        left: 25.5rem;
-        top: -2.5rem;
-        font-weight: bold;
-      }
-
-      .Title3 {
-        position: relative;
-        left: 44rem;
-        top: -5rem;
-        font-weight: bold;
-      }
-
-      .Title4 {
-        position: relative;
-        left: 63.75rem;
-        top: -7.5rem;
-        font-weight: bold;
-      }
-
-      .Author1 {
-        position: relative;
-        left: 4.25rem;
-        top: -8rem;
-      }
-
-      .Author2 {
-        position: relative;
-        left: 25.15rem;
-        top: -10.5rem;
-      }
-
-      .Author3 {
-        position: relative;
-        left: 44.25rem;
-        top: -13rem;
-      }
-
-      .Author4 {
-        position: relative;
-        left: 62.5rem;
-        top: -15.5rem;
-      }
-
-      .carousel-item {
-        height: 500px;
-        width: 100px;
-        background: #777;
-        position: relative;
-      }
-    </style>
+    <link rel="stylesheet" href="Assets/css/normalize_css.css" />
+    <link rel="stylesheet" href="Assets/css/Books_Media.css">
+    <title>Fraser Valley Regional Library Books & Media</title>
   </head>
 
   <body>
@@ -258,13 +169,14 @@
           <p class="Author4">Abraham, Daniel</p>
         </div>
       </div>
-      <!-- Staff's Picks Section -->
-      <div class="section2">
+    </div>
+        <!-- Staff's Picks Section -->
+    <div class="section2">
         <h3>Staff's Picks</h3>
         <div class="carousel-item active">
             <div id="carouselExampleIndicators" class="carousel slide">
                 <div class="carousel-indicators">
-                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
                 </div>
@@ -289,24 +201,9 @@
                 </button>                
             </div>
         </div>
-      </div>
     </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+
+
     <?php require 'footer.php'; ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
