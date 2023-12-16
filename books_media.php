@@ -20,9 +20,11 @@
   </head>
 
   <body>
+    <!-- Header -->
     <?php require 'header.php'; ?>
     <!-- Books,Ebooks,Audiobooks Section -->
     <div class="section1">
+      <!-- Section Header -->
       <h3>Books, Ebooks, Audiobooks</h3>
       <!-- Tab nav -->
       <div class="SectionTabs">
@@ -71,6 +73,7 @@
           </li>
         </ul>
       </div>
+      <!-- Tab Contents -->
       <div class="tab-content" id="myTabContent">
         <div
           class="tab-pane fade show active"
@@ -170,25 +173,43 @@
         </div>
       </div>
     </div>
-        <!-- Staff's Picks Section -->
+
+
+    <!-- Staff's Picks Section -->
     <div class="section2">
+        <!-- Section Header -->
         <h3>Staff's Picks</h3>
+        <br>
+        <!-- Connect Database -->
+        <?php
+        $server = 'localhost';
+        $username = 'root';
+        $password = 'root';
+        $database = 'BooksMedia';
+
+        try{
+            $conn = new PDO("mysql:host=$server;dbname=$database;", $username, $password);
+        } catch(PDOException $e){
+            die( "Connection failed: " . $e->getMessage());
+        }
+        ?>      
+        <!-- Carousel Slider -->
         <div class="carousel-item active">
             <div id="carouselExampleIndicators" class="carousel slide">
                 <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="..." class="d-block w-100" alt="...">
+                        <img src="https://www.syndetics.com/index.aspx?isbn=9781324065401&issn=/LC.JPG&client=sepup&type=xw12" class="carouselimages" alt="...">
                     </div>
                     <div class="carousel-item">
-                        <img src="..." class="d-block w-100" alt="...">
+                        <img src="https://www.syndetics.com/index.aspx?isbn=9781982153083&issn=/LC.JPG&client=sepup&type=xw12&oclc=1335121846" class="carouselimages" alt="...">
                     </div>
                     <div class="carousel-item">
-                        <img src="..." class="d-block w-100" alt="...">
+                        <img src="https://www.syndetics.com/index.aspx?isbn=9780062885548&issn=/LC.JPG&client=sepup&type=xw12&oclc=1373777322" class="carouselimages" alt="...">
                     </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -202,8 +223,7 @@
             </div>
         </div>
     </div>
-
-
+    <!-- Footer -->
     <?php require 'footer.php'; ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>

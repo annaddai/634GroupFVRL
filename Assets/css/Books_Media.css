@@ -1,4 +1,5 @@
-body {
+  /* Overall Structure and Position CSS */
+  body {
     color: #f8f9fa;
   }
 
@@ -9,7 +10,7 @@ body {
 
   .section2 {
     margin-bottom: 600px;
-    margin-left: 60px;
+    margin-left: 50px;
     margin-top: -225px;
     margin-right: 50px;
   }
@@ -27,6 +28,7 @@ body {
     margin-left: 25px;
   }
 
+  /* Static Section CSS */
   img {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -84,9 +86,16 @@ body {
     top: -15.5rem;
   }
 
+  /* Carousel Slides CSS */
   .carousel-item {
     height: 500px;
-    width: 10px;
-    background: #777;
+    background: #E6B5B0;
     position: relative;
+  }
+
+  .carouselimages {
+    position: relative;
+    height: 450px;
+    width: 300px ;
+    left: 900px;
   }
