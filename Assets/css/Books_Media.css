@@ -99,3 +99,104 @@
     width: 300px ;
     left: 900px;
   }
+
+  /* Data Fetch CSS Slide1 */
+  .BookTitle1 {
+    position: relative;
+    left: 20rem;
+    top: 9rem;
+    font-weight: bold;
+  }
+
+  .BookAuthor1 {
+    position: relative;
+    left: 20rem;
+    top: 9rem;
+  }
+
+  .BookDate1 {
+    position: relative;
+    left: 20rem;
+    top: 9rem;
+  }
+
+  .BookIntro1 {
+    position: relative;
+    left: 20rem;
+    top: 12rem;
+    width: 350px;
+  }
+
+  .BookImage1 {
+    position: relative;
+    left: 52rem;
+    top: -9rem;
+  }
+
+
+  /* Data Fetch CSS Slide2&3 */
+  .BookTitle2 {
+    position: relative;
+    left: 20rem;
+    top: 4rem;
+    font-weight: bold;
+  }
+
+  .BookAuthor2 {
+    position: relative;
+    left: 20rem;
+    top: 4rem;
+  }
+
+  .BookDate2 {
+    position: relative;
+    left: 20rem;
+    top: 4rem;
+  }
+
+  .BookIntro2 {
+    position: relative;
+    left: 20rem;
+    top: 7rem;
+    width: 350px;
+  }
+
+  .BookImage2 {
+    position: relative;
+    left: 52rem;
+    top: -18rem;
+  }
+
+
+  /* Data Fetch CSS Slide3 */
+  .BookTitle3 {
+    position: relative;
+    left: 20rem;
+    top: 4rem;
+    font-weight: bold;
+  }
+
+  .BookAuthor3 {
+    position: relative;
+    left: 20rem;
+    top: 4rem;
+  }
+
+  .BookDate3 {
+    position: relative;
+    left: 20rem;
+    top: 4rem;
+  }
+
+  .BookIntro3 {
+    position: relative;
+    left: 20rem;
+    top: 7rem;
+    width: 350px;
+  }
+
+  .BookImage3 {
+    position: relative;
+    left: 52rem;
+    top: -18rem;
+  }

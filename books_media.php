@@ -183,8 +183,8 @@
         <!-- Connect Database -->
         <?php
         require_once 'database_yuanxi.php';
-
         ?>
+
         <!-- Carousel Slider -->
         <div class="carousel-item active">
             <div id="carouselExampleIndicators" class="carousel slide">
@@ -194,34 +194,108 @@
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
                 </div>
 
-                <!--Fetch data by using load.php -->
+                <div class="carousel-inner">
+                    <!-- Slide1 -->
+                    <div class="carousel-item active">
+                      <div class="loaddata">
+                        <!--Fetch data by using load.php -->
                         <?php 
-                        //Extracting data from the database for matching
                         require 'database_yuanxi.php'; //load credentials  
-                        $query="SELECT * FROM `BookInfo`"; //creating query
+                        $query="SELECT * FROM `BookInfo` WHERE id='1'"; //creating query
                         $query_exc = $conn->query($query);
                         while($results= $query_exc->fetch(PDO::FETCH_ASSOC)){  //executing query to save results in $results ?>
-                            <tr>
-                                <td scope="col"><?php echo $results['book_title'];?></td>
-                                <td scope="col"><?php echo $results['book_author'];?></td>
-                                <td scope="col"><?php echo $results['book_date'];?></td>
-                                <td scope="col"><?php echo $results['book_intro'];?></td>
-                            </tr>
+                          <!-- Fetch Title -->
+                          <div class="BookTitle1">
+                            <?php echo $results['book_title'];?>
+                          </div>
+                          <!-- Fetch Author -->
+                          <div class="BookAuthor1">
+                            <?php echo $results['book_author'];?>
+                          </div>
+                          <!-- Fetch Date -->
+                          <div class="BookDate1">
+                            <?php echo $results['book_date'];?>
+                          </div>
+                          <!-- Fetch Intro -->
+                          <div class="BookIntro1">
+                            <?php echo $results['book_intro'];?>
+                          </div>
+                          <!-- Fetch Image -->
+                          <div class="BookImage1">
+                            <img src="<?php echo $results['book_image'];?>" alt="Dayswork,Book,2023">
+                          </div>
+                        <?php } ?>
+                      </div>
+                    </div>
 
-                        <?php } 
-                        ?>
-
-                <div class="carousel-inner">
+                    <!-- Slide2 -->
                     <div class="carousel-item active">
-                        <img src="..." class="carouselimages" alt="...">
+                      <div class="loaddata">
+                        <!--Fetch data by using load.php -->
+                        <?php 
+                        require 'database_yuanxi.php'; //load credentials  
+                        $query="SELECT * FROM `BookInfo` WHERE id='2'"; //creating query
+                        $query_exc = $conn->query($query);
+                        while($results= $query_exc->fetch(PDO::FETCH_ASSOC)){  //executing query to save results in $results ?>
+                          <!-- Fetch Title2 -->
+                          <div class="BookTitle2">
+                            <?php echo $results['book_title'];?>
+                          </div>
+                          <!-- Fetch Author2 -->
+                          <div class="BookAuthor2">
+                            <?php echo $results['book_author'];?>
+                          </div>
+                          <!-- Fetch Date2 -->
+                          <div class="BookDate2">
+                            <?php echo $results['book_date'];?>
+                          </div>
+                          <!-- Fetch Intro2 -->
+                          <div class="BookIntro2">
+                            <?php echo $results['book_intro'];?>
+                          </div>
+                          <!-- Fetch Image2 -->
+                          <div class="BookImage2">
+                            <img src="<?php echo $results['book_image'];?>" alt="Dayswork,Book,2023">
+                          </div>
+                        <?php } ?>
+                      </div>
                     </div>
-                    <div class="carousel-item">
-                        <img src="..." class="carouselimages" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="..." class="carouselimages" alt="...">
+
+                    <!-- Slide3 -->
+                    <div class="carousel-item active">
+                      <div class="loaddata">
+                        <!--Fetch data by using load.php -->
+                        <?php 
+                        require 'database_yuanxi.php'; //load credentials  
+                        $query="SELECT * FROM `BookInfo` WHERE id='3'"; //creating query
+                        $query_exc = $conn->query($query);
+                        while($results= $query_exc->fetch(PDO::FETCH_ASSOC)){  //executing query to save results in $results ?>
+                          <!-- Fetch Title3 -->
+                          <div class="BookTitle3">
+                            <?php echo $results['book_title'];?>
+                          </div>
+                          <!-- Fetch Author3 -->
+                          <div class="BookAuthor3">
+                            <?php echo $results['book_author'];?>
+                          </div>
+                          <!-- Fetch Date3 -->
+                          <div class="BookDate3">
+                            <?php echo $results['book_date'];?>
+                          </div>
+                          <!-- Fetch Intro3 -->
+                          <div class="BookIntro3">
+                            <?php echo $results['book_intro'];?>
+                          </div>
+                          <!-- Fetch Image3 -->
+                          <div class="BookImage3">
+                            <img src="<?php echo $results['book_image'];?>" alt="Dayswork,Book,2023">
+                          </div>
+                        <?php } ?>
+                      </div>
                     </div>
                 </div>
+
+                <!-- Button -->
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
@@ -233,6 +307,7 @@
             </div>
         </div>
     </div>
+    
     <!-- Footer -->
     <?php require 'footer.php'; ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
