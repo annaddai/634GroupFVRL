@@ -185,7 +185,7 @@
         $server = 'localhost';
         $username = 'root';
         $password = 'root';
-        $database = 'BookInfo';
+        $database = 'BooksMedia';
 
         try{
             $conn = new PDO("mysql:host=$server;dbname=$database;", $username, $password);
