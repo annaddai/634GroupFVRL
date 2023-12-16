@@ -182,17 +182,9 @@
         <br>
         <!-- Connect Database -->
         <?php
-        $server = 'localhost';
-        $username = 'root';
-        $password = 'root';
-        $database = 'BooksMedia';
+        require_once 'database_yuanxi.php';
 
-        try{
-            $conn = new PDO("mysql:host=$server;dbname=$database;", $username, $password);
-        } catch(PDOException $e){
-            die( "Connection failed: " . $e->getMessage());
-        }
-        ?>      
+        ?>
         <!-- Carousel Slider -->
         <div class="carousel-item active">
             <div id="carouselExampleIndicators" class="carousel slide">
@@ -201,15 +193,33 @@
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
                 </div>
+
+                <!--Fetch data by using load.php -->
+                        <?php 
+                        //Extracting data from the database for matching
+                        require 'database_yuanxi.php'; //load credentials  
+                        $query="SELECT * FROM `BookInfo`"; //creating query
+                        $query_exc = $conn->query($query);
+                        while($results= $query_exc->fetch(PDO::FETCH_ASSOC)){  //executing query to save results in $results ?>
+                            <tr>
+                                <td scope="col"><?php echo $results['book_title'];?></td>
+                                <td scope="col"><?php echo $results['book_author'];?></td>
+                                <td scope="col"><?php echo $results['book_date'];?></td>
+                                <td scope="col"><?php echo $results['book_intro'];?></td>
+                            </tr>
+
+                        <?php } 
+                        ?>
+
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="https://www.syndetics.com/index.aspx?isbn=9781324065401&issn=/LC.JPG&client=sepup&type=xw12" class="carouselimages" alt="...">
+                        <img src="..." class="carouselimages" alt="...">
                     </div>
                     <div class="carousel-item">
-                        <img src="https://www.syndetics.com/index.aspx?isbn=9781982153083&issn=/LC.JPG&client=sepup&type=xw12&oclc=1335121846" class="carouselimages" alt="...">
+                        <img src="..." class="carouselimages" alt="...">
                     </div>
                     <div class="carousel-item">
-                        <img src="https://www.syndetics.com/index.aspx?isbn=9780062885548&issn=/LC.JPG&client=sepup&type=xw12&oclc=1373777322" class="carouselimages" alt="...">
+                        <img src="..." class="carouselimages" alt="...">
                     </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
