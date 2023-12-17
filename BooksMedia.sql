@@ -9,6 +9,17 @@ CREATE TABLE BookInfo (
   book_image VARCHAR(500) NOT NULL
 );
 
+
+CREATE TABLE UserInfo (
+  id INT(11) NOT NULL auto_increment PRIMARY KEY,
+  fname VARCHAR(30) NOT NULL,
+  lname VARCHAR(30) NOT NULL,
+  uphone VARCHAR(15) NOT NULL,
+  uemail VARCHAR(100) NOT NULL,
+  umessage VARCHAR(1000) NOT NULL
+);
+
+
 INSERT INTO BookInfo (book_title, book_author, book_date, book_intro, book_image) VALUES
 ('Dayswork', 'Bachelder Chris', 2023, 'Dayswork tells the story of a woman who spends the endless days of the pandemic sorting fact from fiction in the life and work of Herman Melville. -- Provided by publisher.', 'https://www.syndetics.com/index.aspx?isbn=9781324065401&issn=/LC.JPG&client=sepup&type=xw12'),
 ('Big Swiss', 'Beagin Jen', 2023, 'Greta lives with her friend Sabine in an ancient Dutch farmhouse in Hudson, New York. The house, built in 1737, is unrenovated, uninsulated, and full of bees. Greta spends her days transcribing therapy sessions for a sex coach who calls himself Om. She becomes infatuated with his newest client, a repressed married woman she affectionately refers to as Big Swiss, since shes tall, stoic, and originally from Switzerland. ... ---Provided by publisher.', 'https://www.syndetics.com/index.aspx?isbn=9781982153083&issn=/LC.JPG&client=sepup&type=xw12&oclc=1335121846'),
